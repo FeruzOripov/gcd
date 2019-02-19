@@ -33,7 +33,7 @@ func main() {
 		req := &pb.GCDRequest{A: a, B: b}
 		if res, err := gcdClient.Compute(c, req); err == nil {
 			c.JSON(http.StatusOK, gin.H{
-				"resutl": fmt.Sprint(res.Result),
+				"result": fmt.Sprint(res.Result),
 			})
 		} else {
 			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
